@@ -8,26 +8,30 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-public class Inning {
-    @Id
-    @GeneratedValue(generator="inning_sequence")
-    int id;
-    long runs;
-    boolean notOut;
-    Date date;
-    String place;
-    MatchType match;
-    @ManyToOne()
-    @JsonIgnore
-    Player player;
+@SequenceGenerator(name = "default_gen", sequenceName = "inning_seq", allocationSize = 1)
+public class Inning extends BaseEntity{
+//    @Id
+//    @GeneratedValue(generator="inning_sequence")
+//    private int id;
+    private long runs;
+    private long fours;
+    private long sixes;
+    private long wickets;
+    private long overs;
+    private boolean notOut;
+    private Date date;
+    private String place;
+    private MatchType match;
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Player player;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+//    public long getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
 
     public long getRuns() {
         return runs;
@@ -45,7 +49,37 @@ public class Inning {
         this.notOut = notOut;
     }
 
+    public long getFours() {
+        return fours;
+    }
 
+    public void setFours(long fours) {
+        this.fours = fours;
+    }
+
+    public long getSixes() {
+        return sixes;
+    }
+
+    public void setSixes(long sixes) {
+        this.sixes = sixes;
+    }
+
+    public long getWickets() {
+        return wickets;
+    }
+
+    public void setWickets(long wickets) {
+        this.wickets = wickets;
+    }
+
+    public long getOvers() {
+        return overs;
+    }
+
+    public void setOvers(long overs) {
+        this.overs = overs;
+    }
 
     public String getPlace() {
         return place;

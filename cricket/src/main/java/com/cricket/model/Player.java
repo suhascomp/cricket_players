@@ -7,24 +7,25 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public class Player {
-    @Id
-    @GeneratedValue(generator="player_sequence")
-    int id;
+@SequenceGenerator(name = "default_gen", sequenceName = "player_seq", allocationSize = 1)
+public class Player extends BaseEntity{
+//    @Id
+//    @GeneratedValue(generator="player_sequence")
+//    private int id;
     @Column(unique = true)
-    String playerCode;
-    String name;
+    private String playerCode;
+    private String name;
 //    String profilePic;
-    @OneToMany()
-    List<Inning> innings;
+    @OneToMany(mappedBy = "player")
+    private List<Inning> innings;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+//    public long getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
 
     public String getPlayerCode() {
         return playerCode;

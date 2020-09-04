@@ -23,5 +23,7 @@ public class PlayerController {
     public List<Player> getAllPlayers() {
         return playerService.getAllPlayer();
     }
+
+
 }
 
