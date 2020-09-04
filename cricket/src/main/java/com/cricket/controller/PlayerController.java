@@ -14,16 +14,29 @@ public class PlayerController {
     @Autowired
     PlayerService playerService;
 
-    @PostMapping()
+    @PostMapping("/save-player")
     public void savePlayer(@RequestBody Player player) {
     playerService.savePlayer(player);
     }
 
-    @GetMapping()
+    @GetMapping("/all-players-list")
     public List<Player> getAllPlayers() {
         return playerService.getAllPlayer();
     }
 
+    @PutMapping("/update-player")
+    public void updatePlayer(@RequestBody Player player) {
+        playerService.updatePlayer(player);
+    }
 
+    @DeleteMapping("delete/{id}")
+    public void deletePlayerById(@PathVariable int id) {
+        playerService.deletePlayerById(id);
+    }
+
+    @GetMapping("player-by-id/{id}")
+    public Player getPlayerById(@PathVariable int id) {
+        return playerService.getPlayerById(id);
+    }
 }
 

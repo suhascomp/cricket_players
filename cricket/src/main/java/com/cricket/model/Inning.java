@@ -25,14 +25,6 @@ public class Inning extends BaseEntity{
     @ManyToOne(fetch = FetchType.LAZY)
     private Player player;
 
-//    public long getId() {
-//        return id;
-//    }
-//
-//    public void setId(int id) {
-//        this.id = id;
-//    }
-
     public long getRuns() {
         return runs;
     }

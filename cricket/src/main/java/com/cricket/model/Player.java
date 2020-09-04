@@ -19,14 +19,6 @@ public class Player extends BaseEntity{
     @OneToMany(mappedBy = "player")
     private List<Inning> innings;
 
-//    public long getId() {
-//        return id;
-//    }
-//
-//    public void setId(int id) {
-//        this.id = id;
-//    }
-
     public String getPlayerCode() {
         return playerCode;
     }

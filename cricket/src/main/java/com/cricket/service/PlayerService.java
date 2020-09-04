@@ -18,4 +18,19 @@ public class PlayerService {
     public List<Player> getAllPlayer() {
         return playerRepo.findAll();
     }
+
+    public void updatePlayer(Player player) {
+//        if(null != player.getId()) {
+            playerRepo.save(player);
+//        }
+
+    }
+
+    public void deletePlayerById(int id) {
+        playerRepo.deleteById(id);
+    }
+
+    public Player getPlayerById(int id) {
+        return playerRepo.findById(id).get();
+    }
 }
