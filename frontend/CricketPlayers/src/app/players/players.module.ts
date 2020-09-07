@@ -10,9 +10,13 @@ import { FormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { AddInningComponent } from './inning/add-inning/add-inning.component';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
-  declarations: [PlayerComponent, InningComponent, AddPlayerComponent],
+  declarations: [PlayerComponent, InningComponent, AddPlayerComponent, AddInningComponent],
   imports: [
     CommonModule,
     PlayersRoutingModule,
@@ -20,10 +24,13 @@ import {MatButtonModule} from '@angular/material/button';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    FlexLayoutModule,
+    MatSelectModule,
+    MatCheckboxModule
   ],
   exports: [
-    PlayerComponent, AddPlayerComponent
+    PlayerComponent, AddPlayerComponent, AddInningComponent
   ]
 })
 export class PlayersModule { }

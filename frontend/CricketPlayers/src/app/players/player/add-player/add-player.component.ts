@@ -20,7 +20,6 @@ export class AddPlayerComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log(this.player);
     this.playerService.savePlayer(this.player).subscribe((resp) => {
 
     }, (error) => {

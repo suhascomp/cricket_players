@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.util.List;
 
 @Entity
@@ -14,8 +15,15 @@ public class Player extends BaseEntity{
 //    private int id;
     @Column(unique = true)
     private String playerCode;
-    private String name;
+    private String fName;
+    private String lName;
 //    String profilePic;
+    private Date birthDate;
+    private Date joiningDate;
+    @Column(unique = true)
+    private String emailId;
+    @Column(unique = true)
+    private String mobileNumber;
     @OneToMany(mappedBy = "player")
     private List<Inning> innings;
 
@@ -25,14 +33,6 @@ public class Player extends BaseEntity{
 
     public void setPlayerCode(String playerCode) {
         this.playerCode = playerCode;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public List<Inning> getInnings() {

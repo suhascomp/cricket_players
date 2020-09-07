@@ -1,9 +1,5 @@
 package com.cricket.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import javax.persistence.*;
 import java.util.Date;
 
@@ -19,7 +15,7 @@ public class Inning extends BaseEntity{
     private long wickets;
     private long overs;
     private boolean notOut;
-    private Date date;
+    private Date inningDate;
     private String place;
     private MatchType match;
     @ManyToOne(fetch = FetchType.LAZY)
@@ -97,11 +93,11 @@ public class Inning extends BaseEntity{
         this.player = player;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getInningDate() {
+        return inningDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setInningDate(Date inningDate) {
+        this.inningDate = inningDate;
     }
 }

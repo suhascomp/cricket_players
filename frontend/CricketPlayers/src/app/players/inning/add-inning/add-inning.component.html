@@ -1,0 +1,60 @@
+<div>
+    <mat-card>
+        <mat-card-title>
+            Save Player Inning
+        </mat-card-title>
+        <mat-card-content>
+            <form #inningForm="ngForm" class="example-form">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Runs</mat-label>
+                    <input matInput placeholder="Enter Player Runs" [(ngModel)]="inning.runs" name="runs"
+                        required>
+                    <mat-error>{{'Required'}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Wickets</mat-label>
+                    <input matInput placeholder="Enter Player Wickets" [(ngModel)]="inning.wickets" name="wickets"
+                        required>
+                    <mat-error>{{'Required'}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Fours</mat-label>
+                    <input matInput placeholder="Enter Player Fours" [(ngModel)]="inning.fours" name="fours"
+                        required>
+                    <mat-error>{{'Required'}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Sixes</mat-label>
+                    <input matInput placeholder="Enter Player Sixes" [(ngModel)]="inning.sixes"
+                        name="sixes" required>
+                    <mat-error>{{'Required'}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Overs</mat-label>
+                    <input matInput placeholder="Enter Player Overs" [(ngModel)]="inning.overs" name="overs" required>
+                    <mat-error>{{'Required'}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Place</mat-label>
+                    <input matInput name="place" [(ngModel)]="inning.place"
+                        placeholder="Place" required>
+                        <mat-error>{{'Required'}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Match Type</mat-label>
+                    <mat-select name="match" [(ngModel)]="inning.match" required>
+                      <mat-option *ngFor="let type of matchTypes" [value]="type">{{type}}</mat-option>
+                    </mat-select>
+                    <mat-error>{{'Required'}}</mat-error>
+                  </mat-form-field>
+                  <section>
+                    <mat-checkbox name="notOut" [(ngModel)]="inning.notOut" required>Not Out</mat-checkbox>
+                  </section>
+            </form>
+        </mat-card-content>
+        <mat-card-actions fxLayout="row" fxLayoutAlign="space-around center">
+            <button mat-raised-button color="primary" [disabled]="inningForm.invalid">Submit</button>
+            <button mat-raised-button color="warn">Cancel</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
