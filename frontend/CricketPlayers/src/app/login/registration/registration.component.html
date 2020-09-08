@@ -1,0 +1,41 @@
+
+    <div class="login-div">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Registration</mat-card-title>
+            </mat-card-header>
+            <form #regForm="ngForm">
+                
+                <mat-form-field class="example-full-width">
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="Enter Player First Name" [(ngModel)]="register.fName" name="fName" required>
+                    <mat-error>{{'Required'}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="Enter Player Last Name" [(ngModel)]="register.lName" name="lName" required>
+                    <mat-error>{{'Required'}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Email Id</mat-label>
+                    <input matInput placeholder="Enter Player Email-id" [(ngModel)]="register.emailId" name="email" required>
+                    <mat-error>{{'Required'}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label for="password">Password</mat-label>
+                    <input matInput type="password" [(ngModel)]="register.password" id="password" name="password" required>
+                    <mat-error>{{'Required'}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Mobile Number</mat-label>
+                    <input matInput placeholder="Enter Player Mobile Number" [(ngModel)]="register.mobileNumber" name="mobileNumber" required>
+                    <mat-error>{{'Required'}}</mat-error>
+                </mat-form-field>
+            </form>
+            <mat-card-actions fxLayout="row" fxLayoutAlign="space-around center">
+                <button mat-raised-button>REGISTER</button>
+                <button mat-raised-button>BACK TO LOGIN</button>
+            </mat-card-actions>
+        </mat-card>
+        
+    </div>

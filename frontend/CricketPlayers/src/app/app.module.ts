@@ -12,6 +12,7 @@ import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { LoginModule } from './login/login.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -28,7 +29,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardModule,
     MatButtonModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    LoginModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
