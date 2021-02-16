@@ -29,7 +29,7 @@ public class PlayerController {
         playerService.updatePlayer(player);
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("delete-player/{id}")
     public void deletePlayerById(@PathVariable int id) {
         playerService.deletePlayerById(id);
     }

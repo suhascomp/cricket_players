@@ -14,7 +14,7 @@ public class InningController {
     @Autowired
     InningService inningService;
 
-    @PostMapping("/save")
+    @PostMapping("/save-inning")
     public void saveInning(@RequestBody Inning inning) {
         inningService.saveInning(inning);
     }
@@ -24,17 +24,17 @@ public class InningController {
         return inningService.getAllInnings();
     }
 
-    @PutMapping("/update")
+    @PutMapping("/update-inning")
     public void updateInning(@RequestBody Inning inning) {
         inningService.updateInning(inning);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("delete-inning/{id}")
     public void deleteInningById(@PathVariable int id) {
         inningService.deleteInningById(id);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("get-inning-by-id/{id}")
     public Inning getInningById(@PathVariable int id) {
         return inningService.getInningById(id);
     }

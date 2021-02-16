@@ -14,6 +14,7 @@ import { MenuComponent } from './menu/menu.component';
   imports: [
     CommonModule,
     LayoutRoutingModule
-  ]
+  ],
+  exports: [CommonLayoutComponent, FooterComponent, HeaderComponent, MenuComponent]
 })
 export class LayoutModule { }

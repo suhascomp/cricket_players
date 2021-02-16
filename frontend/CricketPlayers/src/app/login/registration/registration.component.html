@@ -17,8 +17,8 @@
                     <mat-error>{{'Required'}}</mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
-                    <mat-label>Email Id</mat-label>
-                    <input matInput placeholder="Enter Player Email-id" [(ngModel)]="register.emailId" name="email" required>
+                    <mat-label for="email">Email Id</mat-label>
+                    <input matInput type="email" placeholder="Enter Player Email-id" [(ngModel)]="register.emailId" id="email" name="email" required>
                     <mat-error>{{'Required'}}</mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
@@ -27,8 +27,13 @@
                     <mat-error>{{'Required'}}</mat-error>
                 </mat-form-field>
                 <mat-form-field class="example-full-width">
+                    <mat-label for="confirm-password">Confirm Password</mat-label>
+                    <input matInput type="password" [(ngModel)]="confirmPassword" id="confirm-password" name="confirm-password" required>
+                    <mat-error>{{'Required'}}</mat-error>
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
                     <mat-label>Mobile Number</mat-label>
-                    <input matInput placeholder="Enter Player Mobile Number" [(ngModel)]="register.mobileNumber" name="mobileNumber" required>
+                    <input matInput type="tel" placeholder="Enter Player Mobile Number" [(ngModel)]="register.mobileNumber" name="mobileNumber" required>
                     <mat-error>{{'Required'}}</mat-error>
                 </mat-form-field>
             </form>

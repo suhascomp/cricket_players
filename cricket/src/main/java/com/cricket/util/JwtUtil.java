@@ -5,6 +5,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwt;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -48,8 +49,8 @@ public class JwtUtil {
                 .signWith(SignatureAlgorithm.HS256, SECRETE_KEY).compact();
     }
 
-    public Boolean validationToken(String token, AppUser appUser) {
+    public Boolean validationToken(String token, UserDetails appUser) {
         final String email = extractUsername(token);
-        return (email.equals(appUser.getEmail()) && !isTokenExpired(token));
+        return (email.equals(appUser.getUsername()) && !isTokenExpired(token));
     }
 }

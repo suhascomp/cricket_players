@@ -9,6 +9,7 @@ import { Registration } from '../models/login.models';
 export class RegistrationComponent implements OnInit {
 
   register = new Registration();
+  confirmPassword;
   constructor() { }
 
   ngOnInit(): void {

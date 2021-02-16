@@ -17,7 +17,7 @@ import java.util.Optional;
 public class UserSecurityService implements UserDetailsService {
 
     @Autowired
-    UserRepo userRepo;
+    private UserRepo userRepo;
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {

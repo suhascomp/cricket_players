@@ -13,6 +13,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { LoginModule } from './login/login.module';
+import { LayoutModule } from './layout/layout.module';
 @NgModule({
   declarations: [
     AppComponent
@@ -30,7 +31,8 @@ import { LoginModule } from './login/login.module';
     MatButtonModule,
     HttpClientModule,
     FlexLayoutModule,
-    LoginModule
+    LoginModule,
+    LayoutModule
   ],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   providers: [],
